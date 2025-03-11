@@ -5,7 +5,8 @@ const sitedata=()=>{
 
 const sites=[
   {
-    
+    uri:""
+    las
   }
 ]
 

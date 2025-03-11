@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'], weight: ['300', '400', '500'] });
 
 export const metadata: Metadata = {
-  title: 'Nordic Photography',
+  title: 'Viraj Art Photos',
   description: 'Capturing the raw beauty of Scandinavian landscapes',
 };
 
