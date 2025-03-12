@@ -15,7 +15,7 @@ async function connectDB() {
 
   if (!cached.promise) {
     cached.promise = mongoose.connect(MONGODB_URI, {
-      dbName: 'yourDatabaseName',
+      dbName: 'VirajArtPhotos',
       bufferCommands: false,
     }).then((mongoose) => mongoose);
   }
