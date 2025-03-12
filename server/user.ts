@@ -11,7 +11,7 @@ export const saveUserData = async (userData: {
   try {
     await connectDB();
     const data = await User.create(userData);
-    return data;
+    return JSON.stringify(data);
   } catch (error) {
     console.log({ error });
   }
