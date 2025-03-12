@@ -10,7 +10,8 @@ export const saveUserData = async (userData: {
 }) => {
   try {
     await connectDB();
-    await User.create(userData);
+    const data = await User.create(userData);
+    return data;
   } catch (error) {
     console.log({ error });
   }

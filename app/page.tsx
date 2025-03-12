@@ -16,7 +16,8 @@ export default function Home() {
 
   const handleSave = async () => {
     try {
-      await saveUserData({ name, email, message });
+      const data = await saveUserData({ name, email, message });
+      console.log({ data });
     } catch (error) {
       console.log(error);
     }
