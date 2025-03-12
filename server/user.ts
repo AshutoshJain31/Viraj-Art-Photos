@@ -16,3 +16,13 @@ export const saveUserData = async (userData: {
     console.log({ error });
   }
 };
+
+export const getUsers = async () => {
+  try {
+    await connectDB();
+    const data = await User.find();
+    return JSON.stringify(data);
+  } catch (error) {
+    console.log({ error });
+  }
+};
