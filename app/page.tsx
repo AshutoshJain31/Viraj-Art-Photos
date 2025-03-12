@@ -1,7 +1,7 @@
 "use client";
 
 import { Carousel } from "@/components/ui/carousel";
-import { saveUserData } from "@/server/user";
+import { getUsers, saveUserData } from "@/server/user";
 import { ChevronDown, Instagram, Mail } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -22,6 +22,10 @@ export default function Home() {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    getUsers().then(console.log).catch(console.error);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
