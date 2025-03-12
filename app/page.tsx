@@ -1,17 +1,26 @@
 "use client";
 
 import { Carousel } from "@/components/ui/carousel";
+import { saveUserData } from "@/server/user";
 import { ChevronDown, Instagram, Mail } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [message, setMessage] = useState("")
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-    console.log(name,email,message);
+  console.log(name, email, message);
+
+  const handleSave = async () => {
+    try {
+      await saveUserData({ name, email, message });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,19 +32,23 @@ export default function Home() {
 
   const slideData = [
     {
-      title: "Exceptional wedding and birthday photography! The attention to detail, creativity, and quality of work exceeded our expectations. The photographer beautifully captured every special moment. Highly recommended for any event",
+      title:
+        "Exceptional wedding and birthday photography! The attention to detail, creativity, and quality of work exceeded our expectations. The photographer beautifully captured every special moment. Highly recommended for any event",
       author: "Ashutosh Jain",
     },
     {
-      title: "Such a great experience with our wedding and birthday photos! The photographer was so friendly, and the pictures turned out amazing. Every moment was captured perfectly. We’re so happy with them!",
+      title:
+        "Such a great experience with our wedding and birthday photos! The photographer was so friendly, and the pictures turned out amazing. Every moment was captured perfectly. We’re so happy with them!",
       author: "Piyush Dubey",
     },
     {
-      title: "Absolutely in love with our wedding and birthday photos! The photographer captured every emotion, every detail so beautifully! We’ll treasure these moments forever. Highly recommend for anyone looking for amazing memories!",
+      title:
+        "Absolutely in love with our wedding and birthday photos! The photographer captured every emotion, every detail so beautifully! We’ll treasure these moments forever. Highly recommend for anyone looking for amazing memories!",
       author: "Saurabh Tripathi",
     },
     {
-      title: "Absolutely in love with our wedding and birthday photos! The photographer captured every emotion, every detail so beautifully! We’ll treasure these moments forever. Highly recommend for anyone looking for amazing memories!",
+      title:
+        "Absolutely in love with our wedding and birthday photos! The photographer captured every emotion, every detail so beautifully! We’ll treasure these moments forever. Highly recommend for anyone looking for amazing memories!",
       author: "vanita Jain",
     },
   ];
@@ -52,25 +65,62 @@ export default function Home() {
           priority
         />
         <div className="absolute inset-0 bg-black/30" />
-        <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/90 backdrop-blur-sm" : "bg-transparent"
-          }`}>
+        <nav
+          className={`fixed w-full z-50 transition-all duration-300 ${
+            isScrolled ? "bg-white/90 backdrop-blur-sm" : "bg-transparent"
+          }`}
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
-              <h1 className={`text-2xl font-light ${isScrolled ? "text-black" : "text-white"}`}>
+              <h1
+                className={`text-2xl font-light ${
+                  isScrolled ? "text-black" : "text-white"
+                }`}
+              >
                 Viraj Art Photos
               </h1>
               <div className="flex space-x-8">
-                <a href="#portfolio" className={`${isScrolled ? "text-black" : "text-white"} hover:opacity-70`}>Portfolio</a>
-                <a href="#about" className={`${isScrolled ? "text-black" : "text-white"} hover:opacity-70`}>About</a>
-                <a href="#contact" className={`${isScrolled ? "text-black" : "text-white"} hover:opacity-70`}>Contact</a>
-                <a href="#testimonial" className={`${isScrolled ? "text-black" : "text-white"} hover:opacity-70`}>Testimonial</a>
+                <a
+                  href="#portfolio"
+                  className={`${
+                    isScrolled ? "text-black" : "text-white"
+                  } hover:opacity-70`}
+                >
+                  Portfolio
+                </a>
+                <a
+                  href="#about"
+                  className={`${
+                    isScrolled ? "text-black" : "text-white"
+                  } hover:opacity-70`}
+                >
+                  About
+                </a>
+                <a
+                  href="#contact"
+                  className={`${
+                    isScrolled ? "text-black" : "text-white"
+                  } hover:opacity-70`}
+                >
+                  Contact
+                </a>
+                <a
+                  href="#testimonial"
+                  className={`${
+                    isScrolled ? "text-black" : "text-white"
+                  } hover:opacity-70`}
+                >
+                  Testimonial
+                </a>
               </div>
             </div>
           </div>
         </nav>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
           <h2 className="text-6xl font-light mb-6">Viraj Art PhotoGraphy</h2>
-          <p className="text-xl font-light mb-12">Planning Your Perfect Day, Your Perfect Way</p>
+          <p className="text-xl font-light mb-12">
+            Planning Your Perfect Day, Your Perfect Way
+          </p>
           <ChevronDown className="animate-bounce w-8 h-8" />
         </div>
       </section>
@@ -86,9 +136,12 @@ export default function Home() {
               "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122",
               "https://images.unsplash.com/photo-1527489377706-5bf97e608852",
               "https://images.unsplash.com/photo-1518128958364-65859d70aa41",
-              "https://images.unsplash.com/photo-1469474968028-56623f02e42e"
+              "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
             ].map((src, index) => (
-              <div key={index} className="relative aspect-[3/4] overflow-hidden group">
+              <div
+                key={index}
+                className="relative aspect-[3/4] overflow-hidden group"
+              >
                 <Image
                   src={src}
                   alt={`Portfolio ${index + 1}`}
@@ -106,15 +159,24 @@ export default function Home() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-light mb-8">About</h2>
           <p className="text-lg text-gray-600 mb-12">
-            With over 15 years of experience, I specialize in capturing life’s most beautiful moments, from weddings and birthdays to all types of special events. My passion is creating timeless memories through photography, delivering images that tell your unique story with authenticity, elegance, and creativity."
-
-            Feel free to tweak it to your liking!
+            With over 15 years of experience, I specialize in capturing life’s
+            most beautiful moments, from weddings and birthdays to all types of
+            special events. My passion is creating timeless memories through
+            photography, delivering images that tell your unique story with
+            authenticity, elegance, and creativity." Feel free to tweak it to
+            your liking!
           </p>
           <div className="flex justify-center space-x-8">
-            <a href="https://instagram.com" className="text-gray-600 hover:text-gray-900">
+            <a
+              href="https://instagram.com"
+              className="text-gray-600 hover:text-gray-900"
+            >
               <Instagram className="w-6 h-6" />
             </a>
-            <a href="mailto:contact@nordic.com" className="text-gray-600 hover:text-gray-900">
+            <a
+              href="mailto:contact@nordic.com"
+              className="text-gray-600 hover:text-gray-900"
+            >
               <Mail className="w-6 h-6" />
             </a>
           </div>
@@ -125,13 +187,13 @@ export default function Home() {
       <section id="contact" className="py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-light text-center mb-12">Contact</h2>
-          <form className="space-y-6">
+          <div className="space-y-6">
             <div>
               <input
                 type="text"
                 placeholder="Name"
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200"
-                onChange={(e)=>setName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
                 value={name}
               />
             </div>
@@ -140,8 +202,8 @@ export default function Home() {
                 type="email"
                 placeholder="Email"
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200"
-                onChange={(e)=>setEmail(e.target.value)} 
-                value={email}             
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
               />
             </div>
             <div>
@@ -149,31 +211,34 @@ export default function Home() {
                 placeholder="Message"
                 rows={6}
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200"
-                onChange={(e)=>setMessage(e.target.value)}
+                onChange={(e) => setMessage(e.target.value)}
                 value={message}
               />
             </div>
             <button
-              type="submit"
+              onClick={handleSave}
               className="w-full bg-black text-white py-3 rounded-md hover:bg-gray-800 transition-colors"
             >
               Send Message
             </button>
-          </form>
+          </div>
         </div>
       </section>
       <section id="testimonial">
         <div className="max-w-[100vw] overflow-hidden scrollbar-none my-4">
-          <h1 className="text-4xl font-light mb-8 text-center my-4">Testimonial</h1>
+          <h1 className="text-4xl font-light mb-8 text-center my-4">
+            Testimonial
+          </h1>
           <Carousel slides={slideData} />
         </div>
       </section>
 
-
       {/* Footer */}
       <footer className="py-8 bg-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm">© 2025 Viraj Art Photos. All rights reserved.</p>
+          <p className="text-sm">
+            © 2025 Viraj Art Photos. All rights reserved.
+          </p>
         </div>
       </footer>
     </main>
