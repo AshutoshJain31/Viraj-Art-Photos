@@ -7,6 +7,11 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+
+    console.log(name,email,message);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,22 +25,18 @@ export default function Home() {
     {
       title: "Exceptional wedding and birthday photography! The attention to detail, creativity, and quality of work exceeded our expectations. The photographer beautifully captured every special moment. Highly recommended for any event",
       author: "Ashutosh Jain",
-      // src: "https://images.unsplash.com/photo-1494806812796-244fe51b774d?q=80&w=3534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Such a great experience with our wedding and birthday photos! The photographer was so friendly, and the pictures turned out amazing. Every moment was captured perfectly. We’re so happy with them!",
       author: "Piyush Dubey",
-      // src: "https://images.unsplash.com/photo-1518710843675-2540dd79065c?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Absolutely in love with our wedding and birthday photos! The photographer captured every emotion, every detail so beautifully! We’ll treasure these moments forever. Highly recommend for anyone looking for amazing memories!",
       author: "Saurabh Tripathi",
-      // src: "https://images.unsplash.com/photo-1590041794748-2d8eb73a571c?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Absolutely in love with our wedding and birthday photos! The photographer captured every emotion, every detail so beautifully! We’ll treasure these moments forever. Highly recommend for anyone looking for amazing memories!",
       author: "vanita Jain",
-      // src: "https://images.unsplash.com/photo-1679420437432-80cfbf88986c?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
 
@@ -130,6 +131,8 @@ export default function Home() {
                 type="text"
                 placeholder="Name"
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200"
+                onChange={(e)=>setName(e.target.value)}
+                value={name}
               />
             </div>
             <div>
@@ -137,6 +140,8 @@ export default function Home() {
                 type="email"
                 placeholder="Email"
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200"
+                onChange={(e)=>setEmail(e.target.value)} 
+                value={email}             
               />
             </div>
             <div>
@@ -144,6 +149,8 @@ export default function Home() {
                 placeholder="Message"
                 rows={6}
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200"
+                onChange={(e)=>setMessage(e.target.value)}
+                value={message}
               />
             </div>
             <button
