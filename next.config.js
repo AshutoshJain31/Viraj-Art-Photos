@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+<<<<<<< HEAD
   output: 'export',
+=======
+  reactStrictMode: true,
+>>>>>>> master
   eslint: {
     ignoreDuringBuilds: true,
   },
