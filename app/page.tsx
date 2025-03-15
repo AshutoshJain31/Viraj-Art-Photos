@@ -397,7 +397,7 @@ export default function Home() {
             >
               Send Message
             </button>
-            <Toaster />
+            <Toaster richColors/>
           </div>
         </div>
       </section>
