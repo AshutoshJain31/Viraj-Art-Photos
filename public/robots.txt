@@ -1,5 +1,5 @@
 User-agent: *
 Disallow:
 
-Sitemap: http://localhost:3000/api/sitemap
+Sitemap: https://viraj-art-photos.vercel.app/api/sitemap
 
