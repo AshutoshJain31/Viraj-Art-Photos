@@ -6,7 +6,12 @@ const inter = Inter({ subsets: ['latin'], weight: ['300', '400', '500'] });
 
 export const metadata: Metadata = {
   title: 'Viraj Art Photos',
-  description: 'Capturing the raw beauty of Scandinavian landscapes',
+  description: 'Capturing the every movement of life',
+  openGraph: {
+    title: 'Viraj Art Photos',
+    description: 'Capturing every moment of life',
+    images: '/Assets/Viraj Logo.png', 
+  },
 };
 
 export default function RootLayout({
@@ -17,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={inter.className}>{children}</body>
+      
     </html>
   );
 }

@@ -21,23 +21,28 @@ const focusCards = [
   {
     title: "Wedding",
     src: "/Assets/1.jpg",
-  }, {
-    title: "Birthday",
+  },
+  {
+    title: "Weeding",
     src: "/Assets/2.jpg",
-  }, {
-    title: "Munja",
+  },
+  {
+    title: "Weeding",
     src: "/Assets/3.jpg",
-  }, {
-    title: "Baby Shower",
+  },
+  {
+    title: "Birthday",
     src: "/Assets/4.jpg",
-  }, {
-    title: "Office Event",
+  },
+  {
+    title: "Name Ceremony",
     src: "/Assets/5.jpg",
-  }, {
-    title: "Custom Event",
+  },
+  {
+    title: "Munja",
     src: "/Assets/6.jpg",
   },
-]
+];
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,15 +53,14 @@ export default function Home() {
 
   const handleSave = async () => {
     if (!email || !name || !message) {
-      return toast.error("All fields are required.")
-
+      return toast.error("All fields are required.");
     }
     try {
       const data = await saveUserData({ name, email, message });
-      toast.success("We will reach out to you shortly.")
-      setEmail("")
-      setName("")
-      setMessage("")
+      toast.success("We will reach out to you shortly.");
+      setEmail("");
+      setName("");
+      setMessage("");
       console.log(data);
     } catch (error) {
       console.log(error);
@@ -104,24 +108,28 @@ export default function Home() {
       description:
         "Capturing your special day with elegance and style. Complete coverage of ceremonies, portraits, and candid moments.",
       price: "Starting from ₹25,000",
+      link:"/#contact"
     },
     {
       title: "Birthday Photography",
       description:
         "Professional coverage of birthday celebrations. Includes candid shots, group photos, and special moment captures.",
       price: "Starting from ₹5,000",
+      link:"/#contact"
     },
     {
       title: "Event Photography",
       description:
         "Comprehensive coverage for corporate events, parties, and special occasions. High-quality professional photos.",
       price: "Starting from ₹20,000",
+      link:"/#contact"
     },
     {
       title: "Portrait Sessions",
       description:
         "Professional portrait photography for individuals, couples, and families. Indoor and outdoor sessions available.",
       price: "Starting from ₹10,000",
+      link:"/#contact"
     },
   ];
 
@@ -136,53 +144,72 @@ export default function Home() {
           className="object-cover"
           priority
         />
+        <div className="absolute inset-0 bg-cover"
+        style={{backgroundImage:"url('/Assets/banner.jpg')",backgroundAttachment:"fixed"}}>
+          
+        </div>
         <div className="absolute inset-0 bg-black/30" />
         <nav
-          className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/90 backdrop-blur-sm" : "bg-transparent"
-            }`}
+          className={`fixed w-full z-50 transition-all duration-300 ${
+            isScrolled ? "bg-white/90 backdrop-blur-sm" : "bg-transparent"
+          }`}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
-              <h1
-                className={`text-2xl font-light ${isScrolled ? "text-black" : "text-white"
+              <div className="flex items-center justify-center">
+                <img
+                  className="w-20 h-20"
+                  src="/Assets/Viraj Logo.png"
+                  alt="Viraj Logo"
+                />
+                <h1
+                  className={`text-2xl font-light ${
+                    isScrolled ? "text-black" : "text-white"
                   }`}
-              >
-                Viraj Art Photos
-              </h1>
+                >
+                  Viraj Art Photos
+                </h1>
+              </div>
+
               {/* Desktop Menu */}
               <div className="hidden md:flex space-x-8">
                 <a
                   href="#portfolio"
-                  className={`${isScrolled ? "text-black" : "text-white"
-                    } hover:opacity-70`}
+                  className={`${
+                    isScrolled ? "text-black" : "text-white"
+                  } hover:opacity-70`}
                 >
                   Portfolio
                 </a>
                 <a
                   href="#services"
-                  className={`${isScrolled ? "text-black" : "text-white"
-                    } hover:opacity-70`}
+                  className={`${
+                    isScrolled ? "text-black" : "text-white"
+                  } hover:opacity-70`}
                 >
                   Services
                 </a>
                 <a
                   href="#about"
-                  className={`${isScrolled ? "text-black" : "text-white"
-                    } hover:opacity-70`}
+                  className={`${
+                    isScrolled ? "text-black" : "text-white"
+                  } hover:opacity-70`}
                 >
                   About
                 </a>
                 <a
                   href="#contact"
-                  className={`${isScrolled ? "text-black" : "text-white"
-                    } hover:opacity-70`}
+                  className={`${
+                    isScrolled ? "text-black" : "text-white"
+                  } hover:opacity-70`}
                 >
                   Contact
                 </a>
                 <a
                   href="#testimonial"
-                  className={`${isScrolled ? "text-black" : "text-white"
-                    } hover:opacity-70`}
+                  className={`${
+                    isScrolled ? "text-black" : "text-white"
+                  } hover:opacity-70`}
                 >
                   Testimonial
                 </a>
@@ -194,13 +221,15 @@ export default function Home() {
               >
                 {isMobileMenuOpen ? (
                   <X
-                    className={`w-6 h-6 ${isScrolled ? "text-black" : "text-white"
-                      }`}
+                    className={`w-6 h-6 ${
+                      isScrolled ? "text-black" : "text-white"
+                    }`}
                   />
                 ) : (
                   <Menu
-                    className={`w-6 h-6 ${isScrolled ? "text-black" : "text-white"
-                      }`}
+                    className={`w-6 h-6 ${
+                      isScrolled ? "text-black" : "text-white"
+                    }`}
                   />
                 )}
               </button>
@@ -250,11 +279,11 @@ export default function Home() {
           )}
         </nav>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
-          <div className="w-full bg-white text-black opacity-40 flex flex-col items-center justify-center">
-            <h2 className="text-4xl md:text-6xl font-light mb-6">
-              Viraj Art PhotoGraphy
+          <div className="w-full py-4 max-h-screen bg-white text-black opacity-40 flex flex-col items-center justify-center">
+            <h2 className="text-4xl md:text-6xl font-medium mb-6">
+              Viraj Art Photos
             </h2>
-            <p className="text-lg md:text-xl font-light mb-12">
+            <p className="text-xl md:text-xl font-light mb-12">
               Planning Your Perfect Day, Your Perfect Way
             </p>
             <ChevronDown className="animate-bounce w-8 h-8" />
@@ -267,28 +296,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-light text-center mb-16">Portfolio</h2>
           <FocusCards cards={focusCards} />
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              "/Assets/1.jpg",
-              "/Assets/2.jpg",
-              "/Assets/3.jpg",
-              "/Assets/4.jpg",
-              "/Assets/5.jpg",
-              "/Assets/6.jpg",
-            ].map((src, index) => (
-              <div
-                key={index}
-                className="relative aspect-[3/4] overflow-hidden group"
-              >
-                <Image
-                  src={src}
-                  alt={`Portfolio ${index + 1}`}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-            ))}
-          </div> */}
+          
         </div>
       </section>
 
@@ -324,11 +332,11 @@ export default function Home() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-light mb-8">About</h2>
           <p className="text-lg text-gray-600 mb-12">
-            With over 15 years of experience, I specialize in capturing life&apos;s
-            most beautiful moments, from weddings and birthdays to all types of
-            special events. My passion is creating timeless memories through
-            photography, delivering images that tell your unique story with
-            authenticity, elegance, and creativity.
+            With over 15 years of experience, I specialize in capturing
+            life&apos;s most beautiful moments, from weddings and birthdays to
+            all types of special events. My passion is creating timeless
+            memories through photography, delivering images that tell your
+            unique story with authenticity, elegance, and creativity.
           </p>
           <div className="flex justify-center space-x-8">
             <a
@@ -338,7 +346,7 @@ export default function Home() {
               <Instagram className="w-6 h-6" />
             </a>
             <a
-              href="mailto:contact@nordic.com"
+              href="mailto:virajartphots@gmail.com"
               className="text-gray-600 hover:text-gray-900"
             >
               <Mail className="w-6 h-6" />
@@ -373,7 +381,9 @@ export default function Home() {
               <div className="text-center">
                 <MapPin className="w-8 h-8 mx-auto mb-4 text-gray-700" />
                 <h3 className="text-xl font-semibold mb-2">Address</h3>
-                <p className="text-gray-600">Shop No-13,Viraj Art Photo&apos;s, </p>
+                <p className="text-gray-600">
+                  Shop No-13,Viraj Art Photo&apos;s,{" "}
+                </p>
                 <p className="text-gray-600">ShivMarket,Manpada Road </p>
                 <p className="text-gray-600">Dombivali Station,</p>
                 <p className="text-gray-600"> Maharashtra 421201</p>
@@ -437,43 +447,53 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      {/* <footer className="py-8 bg-black text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm">
-            © 2025 Viraj Art Photos. All rights reserved.
-          </p>
-        </div>
-      </footer> */}
-
+      
 
       <footer className="bg-white rounded-lg shadow-sm dark:bg-gray-900 m-4">
         <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
           <div className="sm:flex sm:items-center sm:justify-between">
-            <a href="https://flowbite.com/" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-              <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+            <a
+              href="https://viraj-art-photos.vercel.app/"
+              className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+            >
+              <img
+                src="/Assets/Viraj Logo.png"
+                className="h-20 w-20"
+                alt="Flowbite Logo"
+              />
+              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                Viraj Art Photos
+              </span>
             </a>
             <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
               <li>
-                <a href="#" className="hover:underline me-4 md:me-6">About</a>
+                <a href="#about" className="hover:underline me-4 md:me-6">
+                  About
+                </a>
               </li>
               <li>
-                <a href="#" className="hover:underline me-4 md:me-6">Privacy Policy</a>
+                <a href="/privacy" className="hover:underline me-4 md:me-6">
+                  Privacy Policy
+                </a>
               </li>
+              
               <li>
-                <a href="#" className="hover:underline me-4 md:me-6">Licensing</a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">Contact</a>
+                <a href="#contact" className="hover:underline">
+                  Contact
+                </a>
               </li>
             </ul>
           </div>
           <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-          <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" className="hover:underline">Flowbite™</a>. All Rights Reserved.</span>
+          <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            © 2025{" "}
+            <a href="https://viraj-art-photos.vercel.app/" className="hover:underline">
+              Viraj Art Photos™
+            </a>
+            . All Rights Reserved.
+          </span>
         </div>
       </footer>
-
-
     </main>
   );
 }
