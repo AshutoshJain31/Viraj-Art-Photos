@@ -45,7 +45,7 @@ async function fetchDynamicRoutes(): Promise<MetadataRoute.Sitemap> {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://viraj-art-photos.vercel.app";
 
-    const res = await fetch(`${baseUrl}/api/posts/`, {
+    const res = await fetch(`${baseUrl}api/posts/`, {
       cache: "no-store", // Fetch fresh data every time
     });
 
