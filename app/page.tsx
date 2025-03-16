@@ -29,7 +29,7 @@ export default function Home() {
     }
     try {
       const data = await saveUserData({ name, email, message });
-      toast.success("We will reach out to youshortly.")
+      toast.success("We will reach out to you shortly.")
       setEmail("")
       setName("")
       setMessage("")
