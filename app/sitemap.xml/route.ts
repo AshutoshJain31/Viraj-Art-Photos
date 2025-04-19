@@ -25,23 +25,39 @@ export async function GET(): Promise<Response> {
     {
       url: `${baseUrl}/`,
       lastModified: new Date(),
+      changeFreq: 'daily',
+      priority: 1.0
     },
     {
       url: `${baseUrl}/#about`,
       lastModified: new Date(),
-    },
-    {
-      url: `${baseUrl}/#contact`,
-      lastModified: new Date(),
+      changeFreq: 'monthly',
+      priority: 0.8
     },
     {
       url: `${baseUrl}/#portfolio`,
       lastModified: new Date(),
+      changeFreq: 'weekly',
+      priority: 0.9
     },
     {
       url: `${baseUrl}/#services`,
       lastModified: new Date(),
+      changeFreq: 'monthly',
+      priority: 0.8
     },
+    {
+      url: `${baseUrl}/#contact`,
+      lastModified: new Date(),
+      changeFreq: 'monthly',
+      priority: 0.7
+    },
+    {
+      url: `${baseUrl}/gallery`,
+      lastModified: new Date(),
+      changeFreq: 'weekly',
+      priority: 0.9
+    }
   ];
 
   const dynamicRoutes = await fetchDynamicRoutes(baseUrl);
@@ -55,6 +71,8 @@ export async function GET(): Promise<Response> {
     <url>
       <loc>${route.url}</loc>
       <lastmod>${route.lastModified instanceof Date ? route.lastModified.toISOString() : route.lastModified}</lastmod>
+      ${route.changeFreq ? `<changefreq>${route.changeFreq}</changefreq>` : ''}
+      ${route.priority ? `<priority>${route.priority}</priority>` : ''}
     </url>`
     )
     .join("")}
