@@ -28,9 +28,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 async function fetchDynamicRoutes(): Promise<MetadataRoute.Sitemap> {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://viraj-art-photos.vercel.app";
-    const res = await fetch(`${baseUrl}/api/posts/`, {
-      next: { revalidate: 60 }, // Cache the response for 60 seconds
-    });
+    const res = await fetch(`${baseUrl}/api/posts/`); // Removed `next` option
 
     if (!res.ok) {
       console.error("API request failed:", res.status, res.statusText);
