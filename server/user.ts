@@ -11,6 +11,7 @@ export const saveUserData = async (userData: {
   try {
     await connectDB();
     const data = await User.create(userData);
+    console.log("saveUserData", { data });
     return JSON.stringify(data);
   } catch (error) {
     console.log({ error });
@@ -21,6 +22,7 @@ export const getUsers = async () => {
   try {
     await connectDB();
     const data = await User.find();
+    console.log("getUsers", { data });
     return JSON.stringify(data);
   } catch (error) {
     console.log({ error });
