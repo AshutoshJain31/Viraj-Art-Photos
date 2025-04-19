@@ -20,27 +20,27 @@ import { HoverEffect } from "@/components/ui/card-hover-effect";
 const focusCards = [
   {
     title: "Wedding",
-    src: "/Assets/1.jpg",
+    src: "/Assets/one.jpg",
   },
   {
     title: "Weeding",
-    src: "/Assets/2.jpg",
+    src: "/Assets/two.jpg",
   },
   {
     title: "Weeding",
-    src: "/Assets/3.jpg",
+    src: "/Assets/three.jpg",
   },
   {
     title: "Birthday",
-    src: "/Assets/4.jpg",
+    src: "/Assets/four.jpg",
   },
   {
     title: "Name Ceremony",
-    src: "/Assets/5.jpg",
+    src: "/Assets/five.jpg",
   },
   {
     title: "Munja",
-    src: "/Assets/6.jpg",
+    src: "/Assets/six.jpg",
   },
 ];
 
