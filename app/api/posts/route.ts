@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 export async function GET(req: Request) {
   const cities = ["Kalyan", "Dombivali", "Ulhasnagar", "Thane"];
   const events = [
-    "weeding",
+    "Wedding",
     "Birthday",
     "Munja",
     "Engagements",

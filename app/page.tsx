@@ -23,11 +23,11 @@ const focusCards = [
     src: "/Assets/one.jpg",
   },
   {
-    title: "Weeding",
+    title: "Wedding",
     src: "/Assets/two.jpg",
   },
   {
-    title: "Weeding",
+    title: "Wedding",
     src: "/Assets/three.jpg",
   },
   {
